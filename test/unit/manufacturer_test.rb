@@ -49,4 +49,14 @@ class ManufacturerTest < ActiveSupport::TestCase
     @manu.abbreviation = "12345"
     assert !@manu.valid?
   end
+
+  test "lower case abbreviation is saved as uppercase" do
+    @manu.name = "test1"
+    @manu.abbreviation = "abc"
+    assert @manu.valid?
+
+    @manu.save
+
+    assert_equal "ABC", @manu.abbreviation
+  end
 end
