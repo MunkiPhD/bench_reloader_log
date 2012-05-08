@@ -8,6 +8,7 @@ class ManufacturerTest < ActiveSupport::TestCase
   def setup
     @manu = Manufacturer.new
     @manu.abbreviation = "1342"
+    @valid_attribs = {:name => "winchester", :abbreviation => "ABC" }
   end
 
   test "name is not null" do
@@ -58,5 +59,24 @@ class ManufacturerTest < ActiveSupport::TestCase
     @manu.save
 
     assert_equal "ABC", @manu.abbreviation
+  end
+
+  test "name should be unique" do
+    one = Manufacturer.new(@valid_attribs)
+    assert one.save, "failed to save one"
+
+    two = Manufacturer.new(@valid_attribs)
+    assert !two.valid?, "two is not valid"
+    assert_equal 1, two.errors[:name].count, 'names are not unique'
+  end
+
+  test "abbreviation should be unique" do
+    one = Manufacturer.new(@valid_attribs)
+    assert one.save, "failed to save one"
+
+    two = Manufacturer.new(@valid_attribs)
+    assert !two.valid?, 'two is not valid'
+    assert_equal 1, two.errors[:abbreviation].count, "error count on abbreviations is wrong"
+    assert_equal "has already been taken", two.errors[:abbreviation][0], "message is different"
   end
 end
