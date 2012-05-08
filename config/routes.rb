@@ -1,4 +1,8 @@
 Reloader::Application.routes.draw do
+
+  resources :manufacturers
+
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

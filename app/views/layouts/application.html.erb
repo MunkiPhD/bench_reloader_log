@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <hr/>
+  <%= yield %>
+  <hr/>
+  Last retrieved at: <%= Time.now %>
 </body>
 </html>
