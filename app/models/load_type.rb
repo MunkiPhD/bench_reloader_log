@@ -1,5 +1,5 @@
 class LoadType < ActiveRecord::Base
-  attr_protected :name
+  attr_accessible :name
 
   validates_presence_of :name
 end

@@ -1,5 +1,6 @@
 Reloader::Application.routes.draw do
 
+  resources :calibers
   resources :manufacturers
 
   root :to => "home#index"
