@@ -5,8 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-puts "Seeding Manufacturer Data"
 
+puts "Seeding Data..."
+
+# -------------------------------------------------------------------
+# 
+puts "Starting Manufacturer Data..."
 # Manufacturer.create(name: "", abbreviation: "")
 Manufacturer.create(name: "Alaska Bullet Company", abbreviation: "AK")
 Manufacturer.create(name: "Barnes", abbreviation: "BAR")
@@ -34,6 +38,10 @@ Manufacturer.create(name: "True Shoot", abbreviation: "TS")
 Manufacturer.create(name: "West Coast", abbreviation: "WC")
 Manufacturer.create(name: "Woodleigh", abbreviation: "WDL")
 Manufacturer.create(name: "Winchester", abbreviation: "WIN")
+puts "Finished Manufacturer data"
 
-
-puts "Finished seeding Manufacturer data"
+# -------------------------------------------------------------------
+puts "Starting LoadType data..."
+LoadType.create(name: "Pistol")
+LoadType.create(name: "Rifle")
+puts "Finished LoadType data"
