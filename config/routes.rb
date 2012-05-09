@@ -1,6 +1,14 @@
 Reloader::Application.routes.draw do
 
+  #match "primer_sizes" => "primer_sizes#index"
+  #match "primer_sizes/:id" => "primer_sizes#show"
+  resources :primer_sizes
+
   resources :calibers
+  #match "caliber" => "calibers#index"
+  #match "caliber/:id" => "calibers#show"
+
+
   resources :manufacturers
 
   root :to => "home#index"

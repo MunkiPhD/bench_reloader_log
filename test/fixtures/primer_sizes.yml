@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+small_pistol:
+  name: Small Pistol
+
+large_pistol:
+  name: Large Pistol
+
+small_rifle:
+  name: Small Rifle
+
+large_rifle_magnum:
+  name: Large Rifle Magnum

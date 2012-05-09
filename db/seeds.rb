@@ -300,3 +300,15 @@ Caliber.create(name: "500 CYRUS", load_type: @rifle)
 Caliber.create(name: "50-140 Sharps", load_type: @rifle)
 Caliber.create(name: "50 Browning Machine Gun", load_type: @rifle)
 puts "Finished Caliber data"
+
+# ---------------------------------------------- 
+puts "Starting Primer Sizes..."
+PrimerSize.create(name: "Small Pistol")
+PrimerSize.create(name: "Small Pistol Magnum")
+PrimerSize.create(name: "Large Pistol")
+PrimerSize.create(name: "Large Pistol Magnum")
+PrimerSize.create(name: "Small Rifle")
+PrimerSize.create(name: "Small Rifle Magnum")
+PrimerSize.create(name: "Large Rifle")
+PrimerSize.create(name: "Large Rifle Magnum")
+puts "Finished Primer Sizes"

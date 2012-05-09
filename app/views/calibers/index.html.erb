@@ -14,12 +14,9 @@
     <td><%= caliber.name %></td>
     <td><%= caliber.load_type.name %></td>
     <td><%= link_to 'Show', caliber %></td>
-    <td><%= link_to 'Edit', edit_caliber_path(caliber) %></td>
-    <td><%= link_to 'Destroy', caliber, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Caliber', new_caliber_path %>
