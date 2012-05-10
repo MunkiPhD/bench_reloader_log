@@ -8,16 +8,16 @@ class ManufacturerTest < ActiveSupport::TestCase
   def setup
     @manu = Manufacturer.new
     @manu.abbreviation = "1342"
-    @valid_attribs = {:name => "winchester", :abbreviation => "ABC" }
+    @valid_attribs = {:name => "cci", :abbreviation => "ABC" }
   end
 
   test "name is not null" do
     assert_equal false, @manu.valid?
   end
 
-  test "name is between 5 and 35 characters long" do
-    @manu.name = "1234"
-    assert_equal false, @manu.valid?, "4 chars was found invalid"
+  test "name is between 3 and 35 characters long" do
+    @manu.name = "12"
+    assert_equal false, @manu.valid?, "2 chars was found invalid"
   end
 
   test "35 chars is valid" do

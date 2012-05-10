@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-cci:
-  name: CCI
-  abbreviation: CCI
+cci_500:
+  name: 500
+  manufacturer: 1
+  primer_size: 1
 
 two:
   name: MyString
-  abbreviation: MyString
+  manufacturer:  1
+  primer_size: 1

@@ -1,7 +1,7 @@
 class Manufacturer < ActiveRecord::Base
   attr_accessible :abbreviation, :name
   validates_presence_of :name
-  validates_length_of :name, :in => (5..35)
+  validates_length_of :name, :in => (3..35)
   validates_uniqueness_of :name
 
   validates_presence_of :abbreviation
@@ -10,6 +10,7 @@ class Manufacturer < ActiveRecord::Base
 
   before_save :upcase_abbreviation
 
+  has_many :primers
 
   private
   def upcase_abbreviation

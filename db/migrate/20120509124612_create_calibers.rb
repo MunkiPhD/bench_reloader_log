@@ -6,5 +6,7 @@ class CreateCalibers < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :calibers, :load_type_id
   end
 end

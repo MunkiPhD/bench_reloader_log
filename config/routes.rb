@@ -1,5 +1,7 @@
 Reloader::Application.routes.draw do
 
+  resources :primers
+
   #match "primer_sizes" => "primer_sizes#index"
   #match "primer_sizes/:id" => "primer_sizes#show"
   resources :primer_sizes

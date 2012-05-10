@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @primer.name %>
+</p>
+
+<p>
+  <b>Manufacturer:</b>
+  <%= @primer.manufacturer %>
+</p>
+
+<p>
+  <b>Primer size:</b>
+  <%= @primer.primer_size %>
+</p>
+
+
+<%= link_to 'Edit', edit_primer_path(@primer) %> |
+<%= link_to 'Back', primers_path %>

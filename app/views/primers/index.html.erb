@@ -1,0 +1,27 @@
+<h1>Listing primers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Manufacturer</th>
+    <th>Primer size</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @primers.each do |primer| %>
+  <tr>
+    <td><%= primer.name %></td>
+    <td><%= primer.manufacturer.name %></td>
+    <td><%= primer.primer_size.name %></td>
+    <td><%= link_to 'Show', primer %></td>
+    <td><%= link_to 'Edit', edit_primer_path(primer) %></td>
+    <td><%= link_to 'Destroy', primer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Primer', new_primer_path %>

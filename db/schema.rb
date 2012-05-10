@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120509175106) do
+ActiveRecord::Schema.define(:version => 20120510124839) do
 
   create_table "calibers", :force => true do |t|
     t.string   "name",         :null => false
@@ -38,5 +38,16 @@ ActiveRecord::Schema.define(:version => 20120509175106) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "primers", :force => true do |t|
+    t.string   "name",            :null => false
+    t.integer  "manufacturer_id", :null => false
+    t.integer  "primer_size_id",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "primers", ["manufacturer_id"], :name => "index_primers_on_manufacturer_id"
+  add_index "primers", ["primer_size_id"], :name => "index_primers_on_primer_size_id"
 
 end
