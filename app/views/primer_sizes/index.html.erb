@@ -11,8 +11,6 @@
 <% @primer_sizes.each do |primer_size| %>
   <tr>
     <td><%= primer_size.name %></td>
-    <td><%= primer_size.manufacturer.name %></td>
-    <td><%= primer_size.primer_size.name %></td>
     <td><%= link_to 'Show', primer_size %></td>
   </tr>
 <% end %>
