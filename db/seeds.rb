@@ -330,15 +330,7 @@ puts "Finished Primer Sizes"
 puts ""
 # -----------------------------------
 puts "Starting Primers..."
-#puts "CCI Name: #{@cci.inspect}"
-#puts "FD Name: #{@federal.inspect}"
-#puts "Primer: #{@sp.inspect}"
-primer = Primer.create(name: "500", manufacturer: @cci, primer_size: @sp)
-#puts "#{primer.to_s}"
-#puts "#{primer.inspect}"
-#puts "is valid?: #{primer.valid?}"
-#primer.save
-#=begin
+Primer.create(name: "500", manufacturer: @cci, primer_size: @sp)
 Primer.create(name: "550", manufacturer: @cci, primer_size: @spmag)
 Primer.create(name: "300", manufacturer: @cci, primer_size: @lp)
 Primer.create(name: "350", manufacturer: @cci, primer_size: @lpmag)
@@ -370,6 +362,32 @@ Primer.create(name: "210M", manufacturer: @federal, primer_size: @lrm)
 Primer.create(name: "215M", manufacturer: @federal, primer_size: @lrmm)
 Primer.create(name: "209", manufacturer: @federal, primer_size: @shot410)
 Primer.create(name: "209", manufacturer: @federal, primer_size: @shotshell)
-#=end
+
+Primer.create(name: "1.5", manufacturer: @remington, primer_size: @sp)
+Primer.create(name: "5.5", manufacturer: @remington, primer_size: @spmag)
+Primer.create(name: "2.5", manufacturer: @remington, primer_size: @lp)
+Primer.create(name: "6.5", manufacturer: @remington, primer_size: @sr)
+Primer.create(name: "7.5", manufacturer: @remington, primer_size: @srmag)
+Primer.create(name: "9.5", manufacturer: @remington, primer_size: @lr)
+Primer.create(name: "9.5M", manufacturer: @remington, primer_size: @lrmag)
+Primer.create(name: "410", manufacturer: @remington, primer_size: @shot410)
+Primer.create(name: "209", manufacturer: @remington, primer_size: @shotshell)
+
+Primer.create(name: "4031", manufacturer: @rws, primer_size: @sp)
+Primer.create(name: "4047", manufacturer: @rws, primer_size: @spmag)
+Primer.create(name: "5337", manufacturer: @rws, primer_size: @lp)
+Primer.create(name: "4033", manufacturer: @rws, primer_size: @sr)
+Primer.create(name: "5341", manufacturer: @rws, primer_size: @lr)
+Primer.create(name: "5333", manufacturer: @rws, primer_size: @lrmag)
+
+Primer.create(name: "WSP", manufacturer: @winchester, primer_size: @sp)
+Primer.create(name: "WSPM", manufacturer: @winchester, primer_size: @spmag)
+Primer.create(name: "WLP", manufacturer: @winchester, primer_size: @lp)
+Primer.create(name: "WSR", manufacturer: @winchester, primer_size: @sr)
+Primer.create(name: "WLR", manufacturer: @winchester, primer_size: @lr)
+Primer.create(name: "WLRM", manufacturer: @winchester, primer_size: @lrmag)
+Primer.create(name: "8312", manufacturer: @winchester, primer_size: @shot410)
+Primer.create(name: "W209", manufacturer: @winchester, primer_size: @shotshell)
+
 puts "Finished Primers"
 puts ""
