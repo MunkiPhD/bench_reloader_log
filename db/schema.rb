@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120510124839) do
+ActiveRecord::Schema.define(:version => 20120511133438) do
+
+  create_table "bullet_types", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "acronym",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "bullets", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "acronym",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "calibers", :force => true do |t|
     t.string   "name",         :null => false

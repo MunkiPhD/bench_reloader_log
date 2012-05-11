@@ -1,5 +1,7 @@
 Reloader::Application.routes.draw do
 
+  resources :bullet_types
+
   resources :primers
 
   #match "primer_sizes" => "primer_sizes#index"

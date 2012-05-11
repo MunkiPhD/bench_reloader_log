@@ -1,0 +1,2 @@
+module BulletTypesHelper
+end
