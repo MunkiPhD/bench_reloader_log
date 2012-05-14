@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 cci:
+  id: 1
   name: CCI
   abbreviation: CCI
 
-two:
-  name: MyString
-  abbreviation: MyString
+federal:
+  id: 2
+  name: Federal
+  abbreviation: FD

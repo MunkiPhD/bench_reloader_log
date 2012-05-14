@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+nine_mm:
+  manufacturer_id: 1 
+  caliber_id: 2
+  bullet_type_id: 1 
+  weight: 115
+  diameter: 0.355
+  name: 9mm
+
+two:
+  manufacturer_id: 2 
+  caliber_id: 2
+  bullet_type_id: 2 
+  weight: 9.99
+  diameter: 9.99
+  name: MyString

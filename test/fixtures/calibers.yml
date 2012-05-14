@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+nine_mm:
+  id: 1
   name: 9mm Luger
   load_type_id: 1
 
 two:
+  id: 2
   name: .223 Remington
   load_type_id: 2

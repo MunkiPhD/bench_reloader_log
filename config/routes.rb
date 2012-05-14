@@ -1,5 +1,7 @@
 Reloader::Application.routes.draw do
 
+  resources :bullets
+
   resources :bullet_types
 
   resources :primers

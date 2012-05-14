@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511133438) do
+ActiveRecord::Schema.define(:version => 20120511173520) do
 
   create_table "bullet_types", :force => true do |t|
     t.string   "name",       :null => false
@@ -21,11 +21,19 @@ ActiveRecord::Schema.define(:version => 20120511133438) do
   end
 
   create_table "bullets", :force => true do |t|
-    t.string   "name",       :null => false
-    t.string   "acronym",    :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "manufacturer_id",                               :null => false
+    t.integer  "caliber_id",                                    :null => false
+    t.integer  "bullet_type_id",                                :null => false
+    t.integer  "weight",                                        :null => false
+    t.decimal  "diameter",        :precision => 4, :scale => 3, :null => false
+    t.string   "name"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
   end
+
+  add_index "bullets", ["bullet_type_id"], :name => "index_bullets_on_bullet_type_id"
+  add_index "bullets", ["caliber_id"], :name => "index_bullets_on_caliber_id"
+  add_index "bullets", ["manufacturer_id"], :name => "index_bullets_on_manufacturer_id"
 
   create_table "calibers", :force => true do |t|
     t.string   "name",         :null => false
@@ -34,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20120511133438) do
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "calibers", ["load_type_id"], :name => "index_calibers_on_load_type_id"
+
   create_table "load_types", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
@@ -41,10 +51,10 @@ ActiveRecord::Schema.define(:version => 20120511133438) do
   end
 
   create_table "manufacturers", :force => true do |t|
-    t.string   "name"
-    t.string   "abbreviation"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "name",                         :null => false
+    t.string   "abbreviation", :default => "", :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "primer_sizes", :force => true do |t|

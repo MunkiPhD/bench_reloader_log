@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Manufacturer:</b>
+  <%= @bullet.manufacturer.name %>
+</p>
+
+<p>
+  <b>Caliber:</b>
+  <%= @bullet.caliber.name %>
+</p>
+
+<p>
+  <b>Bullet type:</b>
+  <%= @bullet.bullet_type.name %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @bullet.weight %>
+</p>
+
+<p>
+  <b>Diameter:</b>
+  <%= @bullet.diameter %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @bullet.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_bullet_path(@bullet) %> |
+<%= link_to 'Back', bullets_path %>

@@ -1,0 +1,41 @@
+<%= form_for(@bullet) do |f| %>
+  <% if @bullet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bullet.errors.count, "error") %> prohibited this bullet from being saved:</h2>
+
+      <ul>
+      <% @bullet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :manufacturer %><br />
+    <%= select "bullet", "manufacturer_id", Manufacturer.all.collect { |manu| [manu.name, manu.id]}, {:selected => '1' } %>
+  </div>
+  <div class="field">
+    <%= f.label :caliber %><br />
+    <%= select "bullet", "caliber_id", Caliber.all.collect { |caliber| [caliber.name, caliber.id]}, {:selected => '1' } %>
+  </div>
+  <div class="field">
+    <%= f.label :bullet_type %><br />
+    <%= select "bullet", "bullet_type_id", BulletType.all.collect { |btype| [btype.name, btype.id]}, {:selected => '1' } %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :diameter %><br />
+    <%= f.text_field :diameter %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
