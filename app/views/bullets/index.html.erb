@@ -20,7 +20,11 @@
     <td><%= bullet.bullet_type.name %></td>
     <td><%= bullet.weight %></td>
     <td><%= bullet.diameter %></td>
-    <td><%= bullet.name %></td>
+    <td><% unless bullet.name.blank? %>
+      <%= bullet.name %>
+    <% else %>
+      --
+    <% end %></td>
     <td><%= link_to 'Show', bullet %></td>
     <td><%= link_to 'Edit', edit_bullet_path(bullet) %></td>
     <td><%= link_to 'Destroy', bullet, confirm: 'Are you sure?', method: :delete %></td>
