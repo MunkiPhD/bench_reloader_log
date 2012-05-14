@@ -6,14 +6,13 @@ class BulletTypeTest < ActiveSupport::TestCase
   # end
   #
   def setup
-    @valid_attribs = {:name => "Full Metal Jacket", :acronym => "FMJ"}
+    #@valid_attribs = {:name => "Full Metal Jacket 22", :acronym => "FMJ"}
     @invalid_attribs = {:name => "", :acronym => ""}
-    @bullet = BulletType.new(@valid_attribs)
+    @bullet = bullet_types(:fmj) #BulletType.new(@valid_attribs)
   end
 
   test "valid attributes are valid" do
-    bullet = BulletType.new(@valid_attribs)
-    assert bullet.valid?, "#{bullet.errors[:name]} :::: #{bullet.errors[:acronym]}"
+    assert @bullet.valid?, "#{@bullet.errors[:name]} :::: #{@bullet.errors[:acronym]}"
   end
 
   test "name is not null" do
@@ -37,14 +36,12 @@ class BulletTypeTest < ActiveSupport::TestCase
   end
 
   test "name is unique" do
-    assert @bullet.save, "@bullet saved"
-    bobba = BulletType.new(@valid_attribs)
-    bobba.acronym = "xxx"
-    assert !bobba.save, "bobba failed to save"
+    bobba = BulletType.new(:name => @bullet.name, :acronym => "xxx")
+    assert !bobba.save, "bobba saved when it shouldnt have #{bobba.inspect}"
   end
 
   test "acronym is unique" do
-    type1 = BulletType.create(@valid_attribs)
+    type1 = @bullet.clone
     assert type1.valid?, "#{type1.inspect} :: type1 is not valid"
 
     type2 = BulletType.new(:name => "asdsa", :acronym => type1.acronym)
@@ -63,7 +60,7 @@ class BulletTypeTest < ActiveSupport::TestCase
 
   test "acronym is all caps" do
     @bullet.acronym = "abc"
-    assert @bullet.save
+    assert @bullet.save, "Failed to save acronym"
     assert_equal "ABC", @bullet.acronym
   end
 end
